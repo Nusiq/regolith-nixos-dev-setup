@@ -15,7 +15,11 @@
 			},
 			"java_example_local": {
 				"runWith": "java",
-				"script": "../java_example/main.jar"
+				"path": "../java_example/main.jar"
+			},
+			"dotnet_example_local": {
+				"runWith": "dotnet",
+				"path": "../dotnet_example/bin/example.dll"
 			}
 		},
 		"formatVersion": "1.4.0",
@@ -29,6 +33,9 @@
 				"filters": [
 					{
 						"filter": "java_example_local"
+					},
+					{
+						"filter": "dotnet_example_local"
 					},
 					{
 						"filter": "filter_tester",

@@ -21,6 +21,7 @@
         dbaeumer.vscode-eslint
         denoland.vscode-deno
         ms-dotnettools.csharp
+        ms-dotnettools.vscode-dotnet-runtime
         redhat.java
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions that weren't listed in 'vscode-extensions'
