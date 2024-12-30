@@ -9,7 +9,14 @@
 	"regolith": {
 		"dataPath": "./packs/data",
 		"filterDefinitions": {
-
+			"filter_tester": {
+				"url": "github.com/Bedrock-OSS/regolith-filters",
+				"version": "1.0.0"
+			},
+			"java_example_local": {
+				"runWith": "java",
+				"script": "../java_example/main.jar"
+			}
 		},
 		"formatVersion": "1.4.0",
 		"profiles": {
@@ -20,7 +27,15 @@
 					"rpName": "'RP'"
 				},
 				"filters": [
-
+					{
+						"filter": "java_example_local"
+					},
+					{
+						"filter": "filter_tester",
+						"settings": {
+							"errors_stop_execution": true
+						}
+					}
 				]
 			}
 		}

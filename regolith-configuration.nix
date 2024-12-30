@@ -46,6 +46,7 @@
     nodejs_22
     dotnet-sdk
     jdk
+    maven
     nim
   ];
 }
