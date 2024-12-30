@@ -1,0 +1,28 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.4.json",
+	"author": "Nusiq",
+	"name": "test-project",
+	"packs": {
+		"behaviorPack": "./packs/BP",
+		"resourcePack": "./packs/RP"
+	},
+	"regolith": {
+		"dataPath": "./packs/data",
+		"filterDefinitions": {
+
+		},
+		"formatVersion": "1.4.0",
+		"profiles": {
+			"default": {
+				"export": {
+					"target": "local",
+					"bpName": "'BP'",
+					"rpName": "'RP'"
+				},
+				"filters": [
+
+				]
+			}
+		}
+	}
+}
