@@ -3,20 +3,20 @@
 	"exportData": false,
 	"filters": [
 		{
-			"runWith": "exe",
-			"exe": "main",
-			"when": "os == 'linux'"
-		},
-		{
 			"runWith": "shell",
 			"command": "echo 'Your operating system is not supported.'",
 			"when": "os != 'linux'"
 		},
 		{
 			"runWith": "shell",
-			// Nonexistent command that stops Regolith
+			"name": "Run command that doesn't exist to crash Regolith.",
 			"command": "OS_NOT_SUPPORTED_ERROR",
 			"when": "os != 'linux'"
+		},
+		{
+			"runWith": "exe",
+			"exe": "main",
+			"when": "os == 'linux'"
 		}
 	]
 }
