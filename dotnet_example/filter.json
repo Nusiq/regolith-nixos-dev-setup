@@ -4,7 +4,7 @@
 	"filters": [
 		{
 			"runWith": "dotnet",
-			"path": "bin/example.ddl"
+			"path": "bin/example.dll"
 		}
 	]
 }
