@@ -1,0 +1,4 @@
+{
+    // Enable Deno extension (may collide with ESLint)
+    "deno.enable": true
+}
