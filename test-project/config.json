@@ -28,6 +28,10 @@
 			"python_example_local": {
 				"runWith": "python",
 				"script": "../python_example/main.py"
+			},
+			"shell_example_local": {
+				"runWith": "shell",
+				"command": "echo 'Hello from shell in BP!' >> BP/shell-hello-bp.txt;echo 'Hello from shell in RP!' >> RP/shell-hello-rp.txt"
 			}
 		},
 		"formatVersion": "1.4.0",
@@ -50,6 +54,9 @@
 					},
 					{
 						"filter": "python_example_local"
+					},
+					{
+						"filter": "shell_example_local"
 					},
 					{
 						"filter": "filter_tester",
