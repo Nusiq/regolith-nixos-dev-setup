@@ -32,6 +32,10 @@
 			"shell_example_local": {
 				"runWith": "shell",
 				"command": "echo 'Hello from shell in BP!' >> BP/shell-hello-bp.txt;echo 'Hello from shell in RP!' >> RP/shell-hello-rp.txt"
+			},
+			"nodejs_example_local": {
+				"runWith": "nodejs",
+				"script": "../nodejs_example/main.js"
 			}
 		},
 		"formatVersion": "1.4.0",
@@ -59,9 +63,12 @@
 						"filter": "shell_example_local"
 					},
 					{
+						"filter": "nodejs_example_local"
+					},
+					{
 						"filter": "filter_tester",
 						"settings": {
-							"errors_stop_execution": true
+							"errors_stop_execution": false
 						}
 					}
 				]
