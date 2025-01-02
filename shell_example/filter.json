@@ -1,0 +1,10 @@
+{
+	"description": "Example Shell filter that creates two files with greetings one in BP and one in RP.",
+	"exportData": false,
+	"filters": [
+		{
+			"runWith": "shell",
+			"command": "echo 'Hello from shell in BP!' >> BP/shell-hello-bp.txt;echo 'Hello from shell in RP!' >> RP/shell-hello-rp.txt"
+		}
+	]
+}
