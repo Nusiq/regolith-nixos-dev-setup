@@ -40,6 +40,10 @@
 			"deno_example_local": {
 				"runWith": "deno",
 				"script": "../deno_example/main.ts"
+			},
+			"executable_example_local": {
+				"runWith": "exe",
+				"exe": "../executable_example/main"
 			}
 		},
 		"formatVersion": "1.4.0",
@@ -71,6 +75,9 @@
 					},
 					{
 						"filter": "deno_example_local"
+					},
+					{
+						"filter": "executable_example_local"
 					},
 					{
 						"filter": "filter_tester",
