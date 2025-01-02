@@ -1,0 +1,10 @@
+{
+	"description": "Example Nim filter that creates two files with greetings one in BP and one in RP.",
+	"exportData": false,
+	"filters": [
+		{
+			"runWith": "nim",
+			"script": "main.nims"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"description": "Example Python filter that creates two files with greetings one in BP and one in RP.",
+	"exportData": false,
+	"filters": [
+		{
+			"runWith": "python",
+			"script": "main.py"
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"description": "Example executable filter that creates two files with greetings one in BP and one in RP.",
+	"exportData": false,
+	"filters": [
+		{
+			"runWith": "exe",
+			"exe": "main",
+			"when": "os == 'linux'"
+		},
+		{
+			"runWith": "shell",
+			"command": "echo 'Your operating system is not supported.'",
+			"when": "os != 'linux'"
+		},
+		{
+			"runWith": "shell",
+			// Nonexistent command that stops Regolith
+			"command": "OS_NOT_SUPPORTED_ERROR",
+			"when": "os != 'linux'"
+		}
+	]
+}
