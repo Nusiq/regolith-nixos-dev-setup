@@ -6,11 +6,6 @@ The goal of this repository is to provide an easy to set up desktop environment 
 
 All instructions can be found below, in the following sections.
 
-> [!WARNING]
-> Currently this repository only provides a Nix configuration file. I'm not a NixOS user and I needed a quick and dirty setup that is easy to reproduce on a virtual machine (all described below).
->
-> In the fututre additional configuration files, like Nix flakes or shell may be added to this repository, but for now I'm not familiar with these features.
-
 # Installing Virtualbox & NixOS
 
 There is no need to explain the same thing people described well already. Here is a tutorial that shows how to insall VirtualBox and NixOS: https://itsfoss.com/install-nixos-vm/
@@ -29,9 +24,7 @@ There is no need to explain the same thing people described well already. Here i
 
 # Nix Configuration
 
-The configuration file privoided in this repository installs all of the dependencies needed to compile Regolith and to run every possible filter kind Regolith supports.
-
-The configuration file is in: `regolith-configuration.nix`
+I included the `basic-configuration.nix` in this project for people who just want to setup very basic virtualmachine. It adds `git` and VSCodium. Adding it to your Nix configuration is optional because `shell.nix` (explained later) included all of the things from this configuration.
 
 Simply copy the file into the `/etc/nixos` directory and add it to the imports in the `/etc/nixos/configuration.nix` file:
 
@@ -50,23 +43,22 @@ sudo nixos-rebuild switch
 
 This configuration installs:
 
-- VSCodium with some plugins for Regolith filter development
+- VSCodium with some a plugin for editing Nix files
 - Git & GitHub CLI
-- Go
-- Python 3.12
-- Deno
-- NodeJS v22
-- .NET SDK
-- OpenJDK
-- Nim
+# Nix Shell
+The `shell.nix` is a configuration file for adding dependencies to your project. Once you have NixOS running you can activate it by opening the repository in terminal and running:
 
-The dependencies aren't version locked on purpose. If something breaks I want to know it.
+```
+nix-shell
+```
+After that the system shoudld install all the dependencies defined in `shell.nix` temporarily for your terminal session. This includes VSCodium, that you should be able to open by running `codium .`.
+
 
 # Installing Regolith
 
-The configuration installs Git and Go for you so you can download Regolith repository and build it yourself.
+The `shell.nix` configuration installs Git and Go for you so you can download Regolith repository and build it yourself.
 
-The GitHub repositoryt: https://github.com/Bedrock-OSS/regolith
+The GitHub repository: https://github.com/Bedrock-OSS/regolith
 
 You can download regolith using Git (`cd` into your prefered location and run):
 ```text
@@ -85,10 +77,16 @@ go install
 # Running Regolith
 After installation you should be able to run Regolith using:
 ```text
+regolith
+```
+The `shell.nix` file adds the path where Go builds the executables to the PATH variable.
+
+If for that doesn't work, you can try running it directly:
+```text
 ~/go/bin/regolith
 ```
-The `go install` command by default installs the applications into `~/go/bin/` folder. If you want you can add it to your PATH using:
+
+...or by adding the path yourself:
 ```text
 export PATH="$HOME/go/bin:$PATH"
 ```
-This works only for the current terminal session but you can add it to your `~/.bashrc`, or use whatever method is "correct" on NixOS.
